@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#120705" />
+  <title>上野燒肉幸運轉盤</title>
+  <link rel="stylesheet" href="./style.css?v=10" />
+</head>
+<body>
+  <main class="lottery-app">
+    <header class="brand-bar">
+      <p class="brand-bar__eyebrow">UENO YAKINIKU LOTTERY</p>
+      <h1 class="brand-bar__title">上野燒肉抽獎台</h1>
+      <p class="brand-bar__subtitle">黑金炭火風格幸運轉盤</p>
+    </header>
+
+    <section class="wheel-stage" aria-labelledby="wheelTitle">
+      <div class="stage-heading">
+        <div>
+          <p class="stage-heading__eyebrow">六格轉輪</p>
+          <h2 id="wheelTitle" class="stage-heading__title">本日獎池</h2>
+        </div>
+        <div class="stage-lamps" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div class="fortune-machine">
+        <div class="wheel-head">
+          <div class="wheel-bulbs" data-bulb-ring aria-hidden="true"></div>
+          <div class="wheel-pointer" aria-hidden="true"></div>
+
+          <div class="wheel-rotator" data-wheel-rotator>
+            <div class="wheel-face" data-wheel-track></div>
+          </div>
+
+          <button id="spinButton" class="center-spin" type="button">
+            <span>開始</span>
+            <span>抽獎</span>
+          </button>
+        </div>
+
+        <div class="machine-neck" aria-hidden="true"></div>
+        <div class="machine-base" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="draw-panel" aria-labelledby="drawStatusTitle">
+      <div class="draw-status">
+        <div class="draw-status__copy">
+          <p class="draw-status__eyebrow" id="drawStatusTitle">目前結果</p>
+          <strong id="resultLabel" class="draw-status__title">待機中</strong>
+          <p id="resultDetail" class="draw-status__detail">按下中心按鈕開始抽獎</p>
+        </div>
+        <div class="draw-status__icon">
+          <img id="resultIcon" src="./assets/prizes/ember-grill.png" alt="目前結果圖示" />
+        </div>
+      </div>
+      <p id="resultCS" class="draw-status__cs"></p>
+    </section>
+
+    <section class="prize-grid" aria-labelledby="prizeGridTitle">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Prize Icons</p>
+        <h2 id="prizeGridTitle" class="section-heading__title">六種抽選結果</h2>
+      </div>
+
+      <div id="prizeCards" class="prize-grid__cards"></div>
+    </section>
+
+    <a class="back-to-game" href="../index.html">繼續接單 ➜</a>
+  </main>
+
+  <audio id="bgm" loop preload="auto" src="../assets/bgm.mp3"></audio>
+  <button id="muteBtn" class="mute-btn" type="button" aria-label="背景音樂開關">🔊</button>
+  <script src="./app.js?v=10"></script>
+</body>
+</html>
