@@ -1,45 +1,45 @@
 const PRIZES = [
   {
-    id: "crown", rank: "一獎", label: "皇冠禮",
+    id: "crown", rank: "一獎", label: "皇冠禮", wheelLabel: "霸主餐",
     result: "恭喜抽中一獎  皇冠禮",
     reward: "平日每天可兌換一個 110 元便當共 5 個（限內用並留下每日用餐評論）",
     note: "最高獎項",
-    asset: "./assets/prizes/crown.png", weight: 3, wheelScale: 0.95
+    asset: "./assets/prizes/crown.png", weight: 3, wheelScale: 1.05
   },
   {
-    id: "vip-card", rank: "二獎", label: "VIP 卡",
+    id: "vip-card", rank: "二獎", label: "VIP 卡", wheelLabel: "招待券",
     result: "恭喜抽中二獎  VIP 卡",
     reward: "平日每天可兌換一個 110 元便當共 3 個（限內用並留下每日用餐評論）",
     note: "會員資格",
-    asset: "./assets/prizes/vip-card.png", weight: 5, wheelScale: 1.1
+    asset: "./assets/prizes/vip-card.png", weight: 5, wheelScale: 1.05
   },
   {
-    id: "bento", rank: "三獎", label: "豪華便當",
+    id: "bento", rank: "三獎", label: "豪華便當", wheelLabel: "雙主餐",
     result: "恭喜抽中三獎  豪華便當",
     reward: "本次用餐升級雙主餐 + 加碼炭烤肋排",
     note: "人氣主餐",
-    asset: "./assets/prizes/bento.png", weight: 50, wheelScale: 1.08
+    asset: "./assets/prizes/bento.png", weight: 50, wheelScale: 1.12
   },
   {
-    id: "coupon", rank: "四獎", label: "折價券",
+    id: "coupon", rank: "四獎", label: "折價券", wheelLabel: "折15元",
     result: "恭喜抽中四獎  折價券",
     reward: "15 元折價券，下次來店現場折抵",
     note: "下次折抵",
-    asset: "./assets/prizes/coupon.png", weight: 100, wheelScale: 1.18
+    asset: "./assets/prizes/coupon.png", weight: 100, wheelScale: 0.92
   },
   {
-    id: "pork-belly", rank: "五獎", label: "五花肉",
+    id: "pork-belly", rank: "五獎", label: "五花肉", wheelLabel: "壽星加肉",
     result: "恭喜抽中五獎  加菜五花肉",
     reward: "當月壽星可享加贈五花烤肉片一份（限當月使用）",
     note: "加菜獎",
-    asset: "./assets/prizes/pork-belly.png", weight: 100, wheelScale: 1.02
+    asset: "./assets/prizes/pork-belly.png", weight: 100, wheelScale: 1.0
   },
   {
-    id: "ember-grill", rank: "未中獎", label: "熄火炭爐",
+    id: "ember-grill", rank: "未中獎", label: "熄火炭爐", wheelLabel: "殘念",
     result: "本次未中獎",
     reward: "很可惜，這次沒中獎。明天再來試試手氣！",
     note: "明日再試一次",
-    asset: "./assets/prizes/ember-grill.png", weight: 500, wheelScale: 1.02
+    asset: "./assets/prizes/ember-grill.png", weight: 500, wheelScale: 1.0
   }
 ];
 
@@ -272,6 +272,7 @@ function buildWheel() {
     prizeNode.style.setProperty("--angle", `${index * sectorAngle}deg`);
     prizeNode.innerHTML = `
       <img src="${prize.asset}" alt="${prize.label}" style="--wheel-scale:${prize.wheelScale};" />
+      <span class="wheel-prize__label">${prize.wheelLabel || prize.label}</span>
     `;
     wheelTrack.appendChild(prizeNode);
   }
