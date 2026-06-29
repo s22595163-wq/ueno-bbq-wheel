@@ -18,7 +18,7 @@ const PRIZES = [
     result: "恭喜抽中三獎  豪華便當",
     reward: "本次用餐升級雙主餐 + 加碼炭烤肋排",
     note: "人氣主餐",
-    asset: "./assets/prizes/bento.png", weight: 50, wheelScale: 1.12
+    asset: "./assets/prizes/bento.png?v=2", weight: 50, wheelScale: 1.12
   },
   {
     id: "coupon", rank: "四獎", label: "折價券", wheelLabel: "折15元",
